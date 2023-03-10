@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect, useDispatch } from 'react-redux';
 import { TodoState } from '../../../store';
 import { todoStatusChange } from '../actions/todo';
-import { doneListSelector, todoListSelector } from '../selectors/todo';
+import { doneListSelector, priorityListSelector, todoListSelector } from '../selectors/todo';
 import TodoRow from './TodoRow';
 
 interface TodoListProps {
@@ -12,14 +12,6 @@ interface TodoListProps {
 }
 
 function TodoList({ todos, doneList, onStatusChange }: TodoListProps) {
-
-    const dispatch = useDispatch();
-
-    // const handleStatusChange = (id: string, done: boolean) => {
-    //  //  const changeStatusAction = { type: TODO_STATUS_CHANGE, payload: { id: id, done: done } }
-    //     const changeStatusAction = todoStatusChange(id, done)
-    //     dispatch(changeStatusAction)
-    // }
 
     return (
         <div>
@@ -43,8 +35,6 @@ const todoMapper = (s: TodoState) => (
     { todos: todoListSelector(s), doneList: false }
 )
 
-
-
 const doneMapper = (s: TodoState) => (
     { todos: doneListSelector(s), doneList: true }
 )
@@ -53,5 +43,10 @@ const dispatchMapper = {
     onStatusChange: todoStatusChange
 }
 
+const mapPriorityStateToProps = (s: TodoState) => {
+    return { todos: priorityListSelector(s, "Low"), doneList: false}
+}
+
 export const TodoComponent = connect(todoMapper, dispatchMapper)(TodoList);
 export const DoneComponent = connect(doneMapper, dispatchMapper)(TodoList);
+export const PriorityComponent = connect(mapPriorityStateToProps, dispatchMapper)(TodoList);
