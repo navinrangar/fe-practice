@@ -7,6 +7,8 @@ import SignIn from "./practice/other/SignIn";
 import Signup from "./practice/other/Signup";
 // import FbLogin from "./practice/other/Fblogin";
 import ReduxHome from "./practice/redux/ReduxHome";
+import Todo from "./practice/redux/Todo/Todo";
+import Users from "./practice/redux/Todo/Users";
 
 
 const App = () => {
@@ -20,6 +22,8 @@ const App = () => {
       <Route path="/redux" element={<ReduxHome/>}/>
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/" element={<SignIn/>}/>
+      <Route path="/redux/todo" element={<Todo/>}/>
+      <Route path="/redux/users" element={<Users/>}/>
       {/* <Route path="/fblogin" element={<FbLogin/>}/> */}
     </Routes>
    

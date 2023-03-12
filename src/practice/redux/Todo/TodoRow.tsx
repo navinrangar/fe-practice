@@ -2,8 +2,8 @@ import React, { useCallback } from 'react'
 
 
 interface TodoRowProps {
-    todo: { id: string, name: string, done: boolean },
-    onStatusChange: (id: string, done: boolean) => void;
+    todo: { id: number, name: string, done: boolean },
+    onStatusChange: (id: number, done: boolean) => void;
 }
 
 const TodoRow = ({ todo, onStatusChange }: TodoRowProps) => {

@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { connect, useDispatch } from 'react-redux';
-import { TodoState } from '../../../store';
+import { AppState } from '../../../store';
 import { todoStatusChange } from '../actions/todo';
+import { Todo } from '../models/todo';
 import { doneListSelector, priorityListSelector, todoListSelector } from '../selectors/todo';
 import TodoRow from './TodoRow';
 
 interface TodoListProps {
-    todos: [];
+    todos: Todo[];
     doneList: boolean;
-    onStatusChange: (id: string, done: boolean) => void;
+    onStatusChange: (id: number, done: boolean) => void;
 }
 
 function TodoList({ todos, doneList, onStatusChange }: TodoListProps) {
@@ -31,11 +32,11 @@ function TodoList({ todos, doneList, onStatusChange }: TodoListProps) {
 
 export default TodoList
 
-const todoMapper = (s: TodoState) => (
+const todoMapper = (s: AppState) => (
     { todos: todoListSelector(s), doneList: false }
 )
 
-const doneMapper = (s: TodoState) => (
+const doneMapper = (s: AppState) => (
     { todos: doneListSelector(s), doneList: true }
 )
 
@@ -43,7 +44,7 @@ const dispatchMapper = {
     onStatusChange: todoStatusChange
 }
 
-const mapPriorityStateToProps = (s: TodoState) => {
+const mapPriorityStateToProps = (s: AppState) => {
     return { todos: priorityListSelector(s, "Low"), doneList: false}
 }
 

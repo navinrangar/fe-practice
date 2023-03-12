@@ -4,7 +4,7 @@ import { todoCreator } from '../actions/todo';
 import { v4 as uuidv4 } from "uuid";
 
 type TodoCreatorProps  = {
-    onSubmit: (id: string, todoText: string, priority: string) => void;
+    onSubmit: (todoText: string, priority: string) => void;
 }
 
 const TodoCreator = ({onSubmit} : TodoCreatorProps) => {
@@ -28,14 +28,14 @@ const TodoCreator = ({onSubmit} : TodoCreatorProps) => {
     const handleSubmit = () => {
         if (todo){
        //dispatch(addTodoAction);
-        onSubmit(uuidv4(), todo, priority);
+        onSubmit(todo, priority);
         setTodo('');
         }
     }
 
 
     return (
-        <div className="flex gap-3 border-1 outline my-4">
+        <div className="inline-block gap-3 border-1 outline my-4">
             <input className="outline-none" type="text" value={todo} onChange={(e) => handleChange(e)} />
             <select className='outline-none' value={priority} onChange={(e) => handlePriorityChange(e)}>
                 <option> High </option>

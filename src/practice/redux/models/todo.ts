@@ -3,3 +3,8 @@ export interface Todo {
     name: string
     done: boolean
 }
+
+export interface User {
+    id: number
+    name: string
+}

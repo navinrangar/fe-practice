@@ -5,6 +5,8 @@ import { todoListSelector } from "../selectors/todo";
 import { v4 as uuidv4 } from "uuid";
 import { DoneComponent, PriorityComponent, TodoComponent } from "./TodoList";
 import { TodoMaker } from "./TodoCreator";
+import Navigation from "./Header";
+import Header from "./Header";
 
 
 const Todo = () => {
@@ -16,14 +18,15 @@ const Todo = () => {
     }
 
     return (
-        <div>
-             <select className='outline-none' value={priority} onChange={(e) => handlePriorityChange(e)}>
+        <div className="flex flex-col items-center justify-center h-screen">
+            <Header/>
+             {/* <select className='outline-none' value={priority} onChange={(e) => handlePriorityChange(e)}>
                 <option> High </option>
                 <option> Moderate </option>
                 <option> Low </option>
-            </select>
+            </select> */}
             <TodoComponent/>
-            <PriorityComponent/>
+            {/* <PriorityComponent/> */}
             <TodoMaker />
             <DoneComponent/>
         </div>
