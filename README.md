@@ -5,6 +5,8 @@ git clone https://github.com/navinrangar/fe-practice.git
 
 ### `npm start`
 
+live here: https://fe-practice.netlify.app/navigation
+
 Kindly help us build more practice projects for beginners.
 
 # Getting Started with Create React App
