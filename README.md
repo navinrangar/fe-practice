@@ -1,5 +1,5 @@
 # GETTING STARTED WITH fe-practice
-git clone https://github.com/navinrangar/fe-practice/.git
+git clone https://github.com/navinrangar/fe-practice.git
 
 ### `npm install`
 
