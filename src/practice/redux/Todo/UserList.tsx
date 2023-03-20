@@ -1,14 +1,21 @@
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { AppState } from '../../../store';
+import { AppState } from '../../../todo-store';
+import { fetchUsers } from '../actions/users';
 import { User } from '../models/todo';
 import { userListSelector } from '../selectors/todo';
 
 interface UserListProps {
     users: User[];
+    getUsers: () => any
 }
 
-function UserList({ users}: UserListProps) {
+function UserList({ users, getUsers}: UserListProps) {
 
+    useEffect(() => {
+      getUsers();
+    }, [])
+    
     return (
         <div>
             <div className="flex flex-col gap-2">
@@ -34,4 +41,8 @@ const mapStateToProps = (s: AppState) => (
     {users: userListSelector(s)}
 )
 
-export const UserListComponent = connect(mapStateToProps, undefined)(UserList);
+const mapDispatchToProps = {
+    getUsers: fetchUsers
+}
+
+export const UserListComponent = connect(mapStateToProps, mapDispatchToProps)(UserList);

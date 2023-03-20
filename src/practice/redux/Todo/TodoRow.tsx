@@ -1,29 +1,53 @@
-import React, { useCallback } from 'react'
+import { useCallback, useState } from 'react'
+import { Todo } from '../models/todo'
+import TodoEditor from './TodoEditor'
 
 
 interface TodoRowProps {
-    todo: { id: number, name: string, done: boolean },
-    onStatusChange: (id: number, done: boolean) => void;
+    todo: Todo
+    onStatusChange: (id: number, done: boolean) => void
+    onDelete: (id: number) => void
 }
 
-const TodoRow = ({ todo, onStatusChange }: TodoRowProps) => {
+const TodoRow = ({ todo, onStatusChange, onDelete }: TodoRowProps) => {
 
-    const { id, name, done } = todo;
+    const { id, done } = todo;
+
+    const [showEdit, setShowEdit] = useState(false);
 
     const handleChange = useCallback(() => {
         onStatusChange(id, !done);
     }, [id, done])
 
+    const handleDelete = useCallback(() => {
+        onDelete(id);
+    }, [id])
+
+    const handleEdit = useCallback(() => {
+        setShowEdit(!showEdit);
+    }, [showEdit])
+
     return (
         <div>
-            <li className="flex gap-2">
-                <div className='flex gap-2'>
+            <div className='flex flex-col gap-2'>
+                <div className='flex gap-3 self-center'>
                     <input type={"checkbox"} checked={done} className="text-xs cursor-pointer" onClick={() => handleChange()} />
-                    <ul className={todo?.done ? 'overline' : 'underline'}> {todo?.name} </ul>
+                    <p className={todo?.done ? 'overline' : 'underline'}> {todo?.name} </p>
+                    {!done &&
+                        <p className='cursor-pointer' onClick={handleEdit}> ~ </p>
+                    }
+                    {done &&
+                        <p className="cursor-pointer" onClick={handleDelete}> - </p>
+                    }
                 </div>
-            </li>
+                <div className='flex flex-col'>
+                    {showEdit &&
+                        <TodoEditor todoToEdit={todo} setFormClose={setShowEdit} />
+                    }
+                </div>
+            </div>
         </div>
     )
 }
 
-export default TodoRow
+export default TodoRow;

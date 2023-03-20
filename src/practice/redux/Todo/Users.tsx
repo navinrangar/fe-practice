@@ -4,7 +4,7 @@ import { UserListComponent } from './UserList'
 
 function Users() {
   return (
-    <div className=''>
+    <div className="flex flex-col items-center justify-center h-screen">
       <Header />
       <UserMaker />
       <UserListComponent/>

@@ -7,8 +7,9 @@ import {
   BrowserRouter
 } from "react-router-dom";
 import { Provider } from 'react-redux';
-import store, { todoStore } from './store';
+import { todoStore } from './todo-store';
 import { FacebookProvider } from 'react-facebook';
+import showFinderStore from './showfinder-store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -16,13 +17,13 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <FacebookProvider appId={"2391615111008547"} lazy>
-    <Provider store={store}>
       <Provider store={todoStore}>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
-    </Provider>
-    </Provider>
+        <Provider store={showFinderStore}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </Provider>
+      </Provider>
     </FacebookProvider>
   </React.StrictMode>
 );

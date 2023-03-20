@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
-import { connect, useDispatch } from 'react-redux';
-import { AppState } from '../../../store';
-import { todoStatusChange } from '../actions/todo';
+import { connect} from 'react-redux';
+import { AppState } from '../../../todo-store';
+import { todoDelete, todoPriorityChange, todoStatusChange } from '../actions/todo';
 import { Todo } from '../models/todo';
-import { doneListSelector, priorityListSelector, todoListSelector } from '../selectors/todo';
+import { doneListSelector, todoFilterSelector, todoForLaterSelector, todoListSelector } from '../selectors/todo';
 import TodoRow from './TodoRow';
 
 interface TodoListProps {
-    todos: Todo[];
-    doneList: boolean;
-    onStatusChange: (id: number, done: boolean) => void;
+    todos: Todo[]
+    doneList: boolean
+    onStatusChange: (id: number, done: boolean) => void
+    onTodoDelete: (id: number) => void
 }
 
-function TodoList({ todos, doneList, onStatusChange }: TodoListProps) {
+function TodoList({ todos, doneList, onStatusChange, onTodoDelete }: TodoListProps) {
 
     return (
         <div>
@@ -21,7 +21,7 @@ function TodoList({ todos, doneList, onStatusChange }: TodoListProps) {
                 {todos?.map((todo: any) => {
                     return (
                         todos.length && (
-                            <TodoRow todo={todo} onStatusChange={onStatusChange} />
+                            <TodoRow todo={todo} onStatusChange={onStatusChange} onDelete={onTodoDelete}/>
                         )
                     )
                 })}
@@ -41,13 +41,19 @@ const doneMapper = (s: AppState) => (
 )
 
 const dispatchMapper = {
-    onStatusChange: todoStatusChange
+    onStatusChange: todoStatusChange,
+    onTodoDelete: todoDelete,
 }
 
 const mapPriorityStateToProps = (s: AppState) => {
-    return { todos: priorityListSelector(s, "Low"), doneList: false}
+    return { todos: todoFilterSelector(s), doneList: false}
+}
+
+const mapForLaterStateToProps = (s: AppState) => {
+    return {todos: todoForLaterSelector(s), doneList: false}
 }
 
 export const TodoComponent = connect(todoMapper, dispatchMapper)(TodoList);
 export const DoneComponent = connect(doneMapper, dispatchMapper)(TodoList);
 export const PriorityComponent = connect(mapPriorityStateToProps, dispatchMapper)(TodoList);
+export const ForLaterComponent = connect(mapForLaterStateToProps, dispatchMapper)(TodoList);
