@@ -1,3 +1,12 @@
+# GETTING STARTED WITH fe-practice
+git clone https://github.com/navinrangar/fe-practice/.git
+
+### `npm install`
+
+### `npm start`
+
+Kindly help us build more practice projects for beginners.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
