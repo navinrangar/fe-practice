@@ -16,6 +16,9 @@ const ShowRow = ({ show, key }: Props) => {
                 <p className='font-bold'>{show.name} </p>
                 <p>{show.genres} </p>
                 <p>{show.language} </p>
+                <p>{show.rating.average} </p>
+                {show.summary}
+                <a href={show.url} target={'_blank'} className="p-2 my-2 bg-yellow-200 inline"> Watch Now! </a>
             </div>
         </div>
     )
