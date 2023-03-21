@@ -11,6 +11,7 @@ import ReduxHome from "./practice/redux/ReduxHome";
 import Todo from "./practice/redux/Todo/Todo";
 import Users from "./practice/redux/Todo/Users";
 import GameHome from "./practice/games/GameHome";
+import ShowDetails from "./practice/redux/ShowFinder/ShowDetails";
 
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
       <Route path="/redux/todo" element={<Todo/>}/>
       <Route path="/redux/users" element={<Users/>}/>
       <Route path="/redux/showfinder" element={<ShowFinderHome/>}/>
+      <Route path="/redux/showfinder/shows/:id" element={<ShowDetails/>}/>
       {/* <Route path="/fblogin" element={<FbLogin/>}/> */}
     </Routes>
    

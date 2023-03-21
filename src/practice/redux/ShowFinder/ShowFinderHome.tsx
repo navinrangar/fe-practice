@@ -1,11 +1,17 @@
-import { memo } from "react";
+import { memo, useEffect } from "react";
 import ShowList from "./ShowList";
 
 const ShowFinderHome = () => {
+
+    useEffect(() => {
+        document.title = "show-finder"
+    }, [])
+
+
     return (
-        <div>
-            <h1>ShowFinderHome</h1>
-            <ShowList/>
+        <div className="flex flex-col mt-4 ml-6">
+            <h1 className="font-bold">ShowFinderHome</h1>
+            <ShowList />
         </div>
     )
 }
