@@ -49,7 +49,7 @@ const ShowDetails: FC<Props> = ({ show, fetchShow, actors, fetchShowCast, loadin
                 (
                   <div key={actor.id}>
                     <p className="font-semibold"> {actor.name} </p>
-                    <img src={actor.image.medium} className={"w-36 h-32"}/>
+                    <a href={actor.url} target={"_blank"}> <img src={actor.image.medium} className={"w-36 h-32"}/></a>
                   </div>
                 ))}
               </div>)}
