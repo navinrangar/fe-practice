@@ -1,9 +1,11 @@
 # GETTING STARTED WITH fe-practice
-git clone https://github.com/navinrangar/fe-practice/.git
+git clone https://github.com/navinrangar/fe-practice.git
 
 ### `npm install`
 
 ### `npm start`
+
+live here: https://fe-practice.netlify.app/navigation
 
 Kindly help us build more practice projects for beginners.
 
