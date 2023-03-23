@@ -21,7 +21,7 @@ const ShowList = ({ searchQuery, showList, getShowList }: Props) => {
             {showList.map((pt: any, index: number) => {
                 return (
                     <div className="mt-5">
-                    <ShowRow key={index} show={pt}/>
+                    <ShowRow key={index} show={pt} query={searchQuery}/>
                     </div>
                 )
             })}

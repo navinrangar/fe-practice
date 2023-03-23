@@ -12,6 +12,7 @@ import { rootSaga } from "./practice/redux/sagas/showfinder";
 export const showFinderStore = combineReducers({
     show: showReducer,
     actors: actorReducer,
+    //add a search for actor feature
 })
 
 const store = createStore(showFinderStore,

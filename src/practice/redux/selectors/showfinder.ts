@@ -13,14 +13,11 @@ const actorsEntitiesSelector = createSelector(actorsStateSelector, (actorsState)
 const showCastIdSelector = createSelector(showStateSelector, (showState) => showState.actors)
 
 export const showCastSelector = createSelector(showCastIdSelector, actorsEntitiesSelector, (showActorIds, actorEntities) => {
-   const data= Object.keys(showActorIds).reduce((showActors, showId) => {
-      const actorsIds = showActorIds[+showId];
-      const actors = actorsIds.map((id: number) => actorEntities[id]);
-      return {...showActors, [showId]: actors}
-   } ,{}) as {[id:number] : Actor[]}
-   console.log('data', data);
-   return data;
-   
+  return Object.keys(showActorIds).reduce<{ [id: number]: Actor[] }>((showActors, showId) => {
+      const actorIds = showActorIds[+showId];
+      const actors = actorIds.map((id: number) => actorEntities[id]);
+      return { ...showActors, [showId]: actors }
+   }, {})
 });
 
 const showIdSelector = createSelector(showQuerySelector, showAgainstQuerySelector, (q, aq) => aq[q] || []);

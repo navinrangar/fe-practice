@@ -4,13 +4,14 @@ import { Show } from '../models/showfinder';
 interface Props {
     show: Show
     key: number
+    query: string
 }
 
-const ShowRow = ({ show, key }: Props) => {
+const ShowRow = ({ show, key, query }: Props) => {
     const navigate = useNavigate();
 
     const showDetails = () => {
-        navigate(`/redux/showfinder/shows/${show.id}`);
+        navigate(`/redux/showfinder/shows/${show.id}/?q=${query}`);
     }
 
     return (
