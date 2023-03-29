@@ -4,7 +4,6 @@ import Header from "./Header";
 import TodoFilter from "./TodoFilter";
 
 interface Props {
-    onPriorityChange: (priority: string) => void
 }
 
 const Todo = () => {

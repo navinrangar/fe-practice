@@ -9,7 +9,7 @@ import { rootSaga } from "./practice/redux/sagas/showfinder";
 //     show: ShowState
 // } no need of thie w/ combineReducers
 
-export const showFinderStore = combineReducers({
+const showFinderStore = combineReducers({
     show: showReducer,
     actors: actorReducer,
     //add a search for actor feature

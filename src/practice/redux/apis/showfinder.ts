@@ -25,3 +25,13 @@ export async function fetchShowCast(id: string) {
     const response = await axios.get<actorObject[]>('https://api.tvmaze.com/shows/' + id + '/cast');    
     return response.data;
 }
+
+export async function signUp() {
+    const response = await axios.get('http://localhost:3333/');
+    return response;
+}
+
+export async function addTodo(data: {todo: string}) {
+    const response = await axios.post('http://localhost:3333/todo/add', data);
+    return response;
+}
