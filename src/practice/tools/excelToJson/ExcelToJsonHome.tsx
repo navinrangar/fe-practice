@@ -1,5 +1,5 @@
-import React, { MouseEvent, useState } from 'react'
-import { read, utils, writeFileXLSX } from "xlsx";
+import { useState } from 'react'
+import { read, utils } from "xlsx";
 
 const ExcelToJsonHome = () => {
 
@@ -12,7 +12,6 @@ const ExcelToJsonHome = () => {
             fileReader.readAsBinaryString(selectedFile);
             fileReader.onload = (e) => {
                 let data;
-                console.log('clicked');
                 if (e.target?.result) {
                     data = e.target.result;
                 }
@@ -29,14 +28,14 @@ const ExcelToJsonHome = () => {
                     setJson(jsonObject);
                 });
 
-                if (json)
-                    console.log(JSON.parse(json));
-
             }
+        }
+        {
         }
     }
     return (
-        <div className="flex  flex-end justify-center h-screen w-full mt-12">
+        <div className="flex flex-col items-center h-screen w-full mt-12">
+            <h1 className='font-bold'> EXCEL to JSON Converter!</h1>
             <div className="flex flex-col gap-3">
                 <input type={"file"} accept={".xls, xlsx"} onChange={(event) => {
 
@@ -47,16 +46,21 @@ const ExcelToJsonHome = () => {
                     }
                 }} />
                 <button className={"p-2 bg-yellow-200"} type="submit" onClick={() => generateJSON()}> Upload!</button>
-                {json ?? JSON.parse(json[0]).map((js: any[]) => {
-                    console.log('js', js);
-                    js.map((oneToHundred) => {
-                        oneToHundred.map((element: {boat_name: string}) => {
-                            <p className = 'bg-gray-400 p-10 py-5' > { element.boat_name } </p>
-                        })
-                    })
-                       
-                })}
-        </div>
+
+                {
+                    json
+                    // json.length
+                    //     ?
+                    //     JSON.parse(json)
+                    //         .map((js: any) => {
+                    //             console.log(js.boat_name);
+                    //             return (<div>
+                    //                 <p>{js.boat_name}</p>
+                    //             </div>)
+                    //         }) : 'not available yet!'
+                }
+
+            </div>
         </div >
     )
 }

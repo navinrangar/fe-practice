@@ -13,7 +13,8 @@ import Users from "./practice/redux/Todo/Users";
 import GameHome from "./practice/games/GameHome";
 import ShowDetails from "./practice/redux/ShowFinder/ShowDetails";
 import ExcelToJsonHome from "./practice/tools/excelToJson/ExcelToJsonHome";
-import ToolsHome from "./practice/tools/excelToJson/ToolsHome";
+import ToolsHome from "./practice/tools/ToolsHome";
+import Timer from "./practice/tools/timer/Timer";
 
 
 const App = () => {
@@ -33,7 +34,8 @@ const App = () => {
         <Route path="/redux/showfinder" element={<ShowFinderHome />} />
         <Route path="/redux/showfinder/shows/:id" element={<ShowDetails />} />
         <Route path="/tools" element={<ToolsHome />} />
-        <Route path="/tools/xlToJson" element={<ExcelToJsonHome />} />
+        <Route path="/tools/excel-to-json" element={<ExcelToJsonHome />} />
+        <Route path="/tools/timer" element={<Timer/>} />
         {/* <Route path="/fblogin" element={<FbLogin/>}/> */}
       </Routes>
 
