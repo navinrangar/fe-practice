@@ -3,12 +3,10 @@ import { useEffect, useState } from "react";
 
 const Timer = () => {
 
-    const [numberOfSeconds, setNumberOfSeconds] = useState<number>(0);
     const [secondLeft, setSecondLeft] = useState(0)
     const [inter, setInter] = useState<any>();
 
     const setTime = (e: any) => {
-        setNumberOfSeconds(e.target.value);
         setSecondLeft(e.target.value);
     }
 
@@ -18,7 +16,7 @@ const Timer = () => {
         }, 1000))
     }
 
-    useEffect(() => {        
+    useEffect(() => {
         if (secondLeft <= 1)
             return () => clearInterval(inter)
     }, [secondLeft])
