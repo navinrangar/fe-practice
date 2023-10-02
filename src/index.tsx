@@ -18,11 +18,11 @@ root.render(
   <React.StrictMode>
     <FacebookProvider appId={"2391615111008547"} lazy>
       <Provider store={todoStore}>
-        <Provider store={showFinderStore}>
+        {/* <Provider store={showFinderStore}> */}
           <BrowserRouter>
             <App />
           </BrowserRouter>
-        </Provider>
+        {/* </Provider> */}
       </Provider>
     </FacebookProvider>
   </React.StrictMode>

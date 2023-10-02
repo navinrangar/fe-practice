@@ -16,6 +16,9 @@ import ExcelToJsonHome from "./practice/tools/excelToJson/ExcelToJsonHome";
 import ToolsHome from "./practice/tools/ToolsHome";
 import Timer from "./practice/tools/timer/Timer";
 import TimerClassComponent from "./practice/oops/Timer";
+import DragAndDrop from "./practice/other/DragAndDrop";
+import Login from "./practice/other/forms/Login";
+import OtherHome from "./practice/other/OtherHome";
 
 
 const App = () => {
@@ -36,8 +39,11 @@ const App = () => {
         <Route path="/redux/showfinder/shows/:id" element={<ShowDetails />} />
         <Route path="/tools" element={<ToolsHome />} />
         <Route path="/tools/excel-to-json" element={<ExcelToJsonHome />} />
-        <Route path="/tools/timer" element={<Timer/>} />
-        <Route path="/oops/timer" element={<TimerClassComponent/>}/>
+        <Route path="/tools/timer" element={<Timer />} />
+        <Route path="/oops/timer" element={<TimerClassComponent />} />
+        <Route path="/other" element={<OtherHome />} />
+        <Route path="/other/dnd" element={<DragAndDrop />} />
+        <Route path="/other/login" element={<Login />} />
         {/* <Route path="/fblogin" element={<FbLogin/>}/> */}
       </Routes>
 

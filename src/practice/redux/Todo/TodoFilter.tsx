@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from "react"
+import { memo, useEffect } from "react"
 import { connect } from "react-redux";
 import { todoDueDateChange, todoPriorityChange } from "../actions/todo";
 
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Todo = ({ onPriorityChange, onDueDateChange }: Props) => {
-    const today = new Date().toJSON().slice(0,10);
+    const today = new Date().toJSON().slice(0, 10);
 
     useEffect(() => {
         onPriorityChange('all');

@@ -16,6 +16,10 @@ module.exports = {
       backgroundImage: {
         'buildings': "url('https://images.unsplash.com/photo-1460472178825-e5240623afd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80')",
       },
+      borderWidth: {
+        '150': '150px',
+        'b-300': ' border-bottom-width 300px'
+      },
     },
   },
   plugins: [],

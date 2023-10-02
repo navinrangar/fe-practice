@@ -3,9 +3,6 @@ import { TodoMaker } from "./TodoCreator";
 import Header from "./Header";
 import TodoFilter from "./TodoFilter";
 
-interface Props {
-}
-
 const Todo = () => {
 
     return (

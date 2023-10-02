@@ -38,6 +38,7 @@ const Navigation = () => {
           <Link className="text-xl hover:underline" to="/games"> Games </Link>
           <Link className="text-xl hover:underline" to="/js"> JS </Link>
           <Link className="text-xl hover:underline" to="/tools"> Tools </Link>
+          <Link className="text-xl hover:underline" to="/other"> Other </Link>
         </div>
       </div>
     </div>

@@ -29,7 +29,6 @@ export function* getShowCast(action: AnyAction): Generator<any, any, any> {
     const showId = action.payload;
     const data: { person: Actor }[] = yield call(fetchShowCast, showId);
     const actors = data.map((d) => d.person);
-    console.log('actors', actors);
     yield put(showCastFetchedAction(showId, actors));
 }
 

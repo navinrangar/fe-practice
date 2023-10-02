@@ -1,7 +1,6 @@
-import React, { ChangeEvent, FormEvent, memo, useState } from 'react'
+import { ChangeEvent, FormEvent, memo, useState } from 'react'
 import { connect } from 'react-redux';
 import { todoCreator } from '../actions/todo';
-import { v4 as uuidv4 } from "uuid";
 
 type TodoCreatorProps = {
     onSubmit: Function //(todoText: string, priority: string, due_date: string) => void;
