@@ -32,6 +32,7 @@ const Navigation = () => {
         <div className="flex gap-5">
           <Link className="text-xl hover:underline" to="/redux"> Redux </Link>
           <Link className="text-xl hover:underline" to="/altre"> Altre </Link>
+          <Link className="text-xl hover:underline" to="/surfside"> Surfside </Link>
           <Link className="text-xl hover:underline" to="/css"> CSS </Link>
           <Link className="text-xl hover:underline" to="/oops"> OOPs </Link>
           <Link className="text-xl hover:underline" to="/figma"> Figma </Link>

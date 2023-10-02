@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import Navigation from "./Navigation";
 import Home from "./practice/altre/Home";
+import SurfsideHome from "./practice/surfside/Home";
 import Css from "./practice/css/Css";
 import Figma from "./practice/figma/Figma";
 import SignIn from "./practice/other/SignIn";
@@ -27,6 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/navigation" element={<Navigation />} />
         <Route path="/altre" element={<Home />} />
+        <Route path="/surfside" element={<SurfsideHome />} />
         <Route path="/css" element={<Css />} />
         <Route path="/figma" element={<Figma />} />
         <Route path="/redux" element={<ReduxHome />} />
