@@ -1,10 +1,15 @@
+import ForgotPassword from "./components/ForgotPassword";
+import Login from "./components/Login";
+import ResetPassword from "./components/ResetPassword";
 
 const Home = () => {
 
     return (
-        <div>
-            <div className="flex h-screen justify-center items-center ">
-                <h1 className="font-bold"> Sign in to Your Account. </h1>
+        <div className="bg-gray-100">
+            <div className="flex gap-x-10 h-screen justify-center items-center ">
+                <Login />
+                <ForgotPassword/>
+                <ResetPassword/>
             </div>
         </div>
     )
