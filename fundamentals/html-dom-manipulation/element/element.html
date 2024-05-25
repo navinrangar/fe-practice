@@ -1,0 +1,51 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<title> Javascript- Element Object of DOM </title>
+<link rel="stylesheet" href="./element.css">
+</head>
+<body>
+<header id="header">
+  <div id="header-title">YourJavascriptElementObjects</div>
+<div class="make-flex-reverse">
+  <button id="menu-btn" onclick="toggleMenu()" class="menu-btn">contents</button>
+  <div id="menu-dropdown" class="menu-dropdown">
+    <a id="menu-content1" class="make-block">Javascript DOM (Home)</a>
+    <a class="make-block">Javascript Document Object</a>
+  </div>
+</div>
+</header>
+<hr/>
+<input id="name_checkbox" type="checkbox" />
+<label> YourNamePlease! </label>
+<input id="username" onchange="handleUsernameChange()" accessKey="n" type="text" />
+<a accessKey="s" id="search-username" onclick="searchUsername()" href="https://google.com/" target="_blank"> Search </a>
+<div id="random-stuff" class="random" xmlns="http://w3.org/19dfd99/xhtml"> </div>
+<ul id="random-list"> Statistics:
+</ul>
+<ul style="border:1px solid red; position: relative" id="food-list-1">
+<li style="border:1px solid green; display: inline"> coffee </li>
+<li> chai </li>
+<li> doodh </li>
+</ul>
+<ul id="food-list-2">
+<li> coffee </li>
+<li> juice </li>
+<li> mattha </li>
+</ul>
+<div id="scrollable">
+<div>
+The scrollHeight and scrollWidth Properties
+These properties return the height and width including padding, bet excluding borders, scrollbars, or margins.
+Try to remove and/or change the different CSS property values, and click "Run" again to understand how it works.
+</div>
+</div>
+<button id="blur" onclick="handleBlur()"> Blurr() </button>
+<button onclick="useClassList()"> useClassList() </button>
+<button id="stats" onclick="showStats()">show stats </button>
+<button id="shuffle" onclick="shufflePage()"> shuffle the page </button>
+<button id="remove" style="background-color: yellow" onclick="removeElement()"> remove </button>
+<button id="misc" onclick="miscActions()"> misc </button>
+<script src="./element.js"> </script>
+</body>
+</html>

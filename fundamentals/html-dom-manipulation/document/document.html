@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./document.css" />
+    <title>Javascript- Document Object</title>
+  </head>
+  <body style="font-size: 10px">
+    <div class="header">
+      <h1>YourJavascriptDomObjects</h1>
+      <span id="random">Show Anything: </span>
+    </div>
+    <img
+      src="https://image.jimcdn.com/app/cms/image/transf/none/path/s8f80b492f28707b2/image/i05dad331ee5f24b0/version/1695129382/image.jpg"
+      width="500px"
+      height="300px"
+      id="first-image"
+    />
+    <p id="general" style="display: flex; flex-direction: column">
+      Document object is the root node of html document. Current page is:
+      <a
+        name="url"
+        id="url"
+        href="https://www.abc.xyz"
+        target="_blank"
+        style="color: blue; font-size: 30px"
+      >
+      </a>
+      <a
+        name="documentURI"
+        id="documentURI"
+        style="color: blue; font-size: 30px"
+      >
+      </a>
+      <a
+        name="url"
+        id="url"
+        href="https://www.godlyguide.com"
+        target="_blank"
+        style="color: blue; font-size: 50px"
+      >
+      </a>
+      Active tag is:
+      <span id="active" style="color: red"> </span>
+      Event Listener is:
+      <span id="event-listener" style="color: green"> </span>
+    </p>
+    <iframe id="w3-frame" src="../browser-apis/canvas.html"></iframe>
+    <button onclick="{readWriteDoc()}">Read/Write Doc</button>
+    <button onclick="{saveCookie()}">Set Cookie</button>
+    <button name="color-mode" onclick="colorMode()">Dark Mode</button>
+    <span id="cookies">Cookies: </span>
+    <ul id="studyList"></ul>
+    <button onclick="shuffleScreen()">Shuffle Screen</button>
+    <button onclick="overWriteDocument()">Overwrite Contents</button>
+    <footer name="footer" id="footer"></footer>
+  </body>
+</html>

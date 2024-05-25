@@ -1,0 +1,86 @@
+body {
+font-size: 16px;
+padding: 10px 15px;
+background-color: #998800;
+}
+
+hr {
+ height: 7px;
+ color: #000000;
+ margin-top: 15px;
+ padding: -10px -15px;
+ background-color: #333
+}
+
+#header {
+display: flex;
+padding: 5px 20px 5px 10px;
+justify-content: space-between;
+}
+
+#header-title {
+font-size: 30px;
+font-weight: medium;
+color: #aaccaa;
+text-shadow: 2px 2px #000000;
+text-underline-position: under;
+text-underline-offset: 3px;
+text-decoration: overline underline #ff0000 dashed;
+}
+
+.menu-btn {
+  background-color: gray;
+  margin: 6px 6px;
+}
+
+.menu-dropdown {
+  display: none;
+  background-color: #ffffff;
+  padding: 5px 2px;
+}
+
+#scrollable {
+  height: 100px;
+  width: 100px;
+  background-color: coral;
+  padding: 15px;
+  border: 10px solid black;
+  margin: 10px;
+  overflow: scroll;
+}
+
+//commons
+.make-block {
+  display: block !important;
+}
+
+.make-block {
+display: block;
+}
+
+.make-flex-reverse {
+ display: flex;
+ flex-direction: row-reverse;
+}
+
+.make-border {
+border: 15px solid black;
+border-width: 15px 12px 10px 8px;
+}
+
+//experimental
+.random {
+ background-color: #ff7777;
+}
+
+.test-color {
+ color: #003366;
+}
+
+.test-bg-color {
+background-color: #00aacc;
+}
+
+.test-font {
+ text-decoration: line-through;
+}
